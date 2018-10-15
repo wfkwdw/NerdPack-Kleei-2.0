@@ -1,0 +1,14 @@
+## Title: |r[|cfffffffFKleei|r] Combat Routines 2.0 [BFA]
+## Notes: Combat Routines for NerdPack
+## Interface: 80000
+## Author: Kleei
+## Dependencies: NerdPack, NerdPack-Protected
+
+condition.lua
+unit.lua
+area.lua
+fakeunits.lua
+equip_sets_table.lua
+
+rotations\rogue\assassination.lua
+rotations\rogue\outlaw.lua
