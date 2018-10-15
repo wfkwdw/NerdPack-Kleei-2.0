@@ -1,5 +1,4 @@
-# Nerdpack-Kleei
-[Battle For Azeroth]
+# Nerdpack-Kleei [Battle For Azeroth]
 
 - Nerdpack Discord <a href="https://discordapp.com/invite/XtSZbjM"><img src="http://i.imgur.com/fzomMAr.png" alt="Join us on discord!" width="150" height="50" align = "center" /></a>
 
