@@ -127,6 +127,13 @@ local exeOnLoad = function()
 
 end
 
+local GarroteAoE = {
+
+    {"%pause", "player.energy <= 45", "player"},
+    {"Garrote", "inRange.spell", "enemies"},
+
+}
+
 local Garrote = {
 
     {"%pause", "player.energy <= 45", "player"},
@@ -231,10 +238,11 @@ local Combat = {
 
 	--Garrote
     {Garrote, "inRange(Garrote).spell & spell(Garrote).cooldown <= 1 & canAttack & infront & player.combopoints < 4 & debuff(Garrote).duration < 5", "target"},
+	{"Garrote", "toggle(AoE) & canAttack & infront & !pvp & target.debuff(Garrote) & debuff(Garrote).duration < 3 & deathin > 9 & count.enemies.debuffs(Garrote) < 3 & player.area(7).enemies >= 2", "enemies"},
 
     --AoEs
-    {"Fan of Knives", "toggle(AoE) & player.area(10).enemies >= 3 & !IsStealthed & {player.combopoints < 4 || !target.exists || }", "player"},
-	{"Rupture", "toggle(AoE) & toggle(rupture_key) & inRange.spell & canAttack & infront & !pvp & target.debuff(Rupture) & debuff(Rupture).duration < 3 & deathin > 12 & player.combopoints > 2 & count.enemies.debuffs(Rupture) < 3 & player.area(6).enemies >= 2", "enemies"},
+    {"Fan of Knives", "toggle(AoE) & player.area(10).enemies >= 3 & !IsStealthed & {player.combopoints < 4 || !target.exists}", "player"},
+	{"Rupture", "toggle(AoE) & toggle(rupture_key) & inRange.spell & canAttack & infront & !pvp & target.debuff(Rupture) & debuff(Rupture).duration < 3 & deathin > 9 & player.combopoints > 2 & count.enemies.debuffs(Rupture) < 3 & player.area(7).enemies >= 2", "enemies"},
 
     --Finishers
 	{"Rupture", "toggle(rupture_key) & inRange.spell & canAttack & infront & deathin > 12 & player.combopoints > 2 & debuff(Rupture).duration <= 8", "target"},

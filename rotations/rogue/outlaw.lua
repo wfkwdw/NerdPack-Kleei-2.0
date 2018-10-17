@@ -189,7 +189,8 @@ local PreCombat = {
 
 	--{"Death from Above", "talent(7,3) & inRange.spell & canAttack & !player.buff(Stealth) & {!talent(3,2) & player.combopoints == 5 || talent(3,2) & player.combopoints == 6}", "target"},
 	{"Dispatch", "inRange.spell & canAttack & {!talent(3,2) & player.combopoints >= 4 || talent(3,2) & player.combopoints >= 5}", "target"},
-
+    {"Slice and Dice", "MainDaggerEquipped & SecondaryDaggerEquipped & target.canAttack & talent(6,3) & target.distance <= 15 & combopoints > 1", "player"},
+	
 }
 
 local Survival ={
@@ -244,7 +245,8 @@ local Combat = {
 	--{"Death from Above", "talent(7,3) & inRange.spell & !player.buff(Stealth) & {!talent(3,2) & player.combopoints >= 4 || talent(3,2) & player.combopoints >= 5}", "target"},
 	
 	{"Roll the Bones", "toggle(RTB_key) & !talent(6,3) & target.deathin > 7 & !buff_of_the_bones & player.combopoints > 2", "player"},
-	{"Slice and Dice", "talent(6,3) & buff(Slice and Dice).duration < 3 & combopoints > 1", "player"},
+	{"Slice and Dice", "talent(6,3) & !MainDaggerEquipped & buff(Slice and Dice).duration < 3 & combopoints > 1", "player"},
+	{"Slice and Dice", "talent(6,3) & MainDaggerEquipped & SecondaryDaggerEquipped & !buff(Snake Eyes) & combopoints > 4", "player"},
 	{"Between the Eyes", "inRange.spell & indungeon & player.buff(Ruthless Precision) & {!talent(3,2) & player.combopoints >= 4 || talent(3,2) & player.combopoints >= 5}", "target"},
     {"Dispatch", "inRange.spell & {!talent(3,2) & player.combopoints >= 4 || talent(3,2) & player.combopoints >= 5}", "target"},
 
@@ -252,7 +254,7 @@ local Combat = {
 	{"Blunderbuss", "inRange.spell & !player.buff(Stealth) & pistol.condition & {!target.state(disorient) & !target.state(incapacitate)}", "target"},
 	{"Pistol Shot", "inRange.spell & !player.buff(Stealth) & pistol.condition & {!target.state(disorient) & !target.state(incapacitate)} & player.buff(Opportunity)", "target"},
 	{"Sinister Strike", "inRange.spell & !player.buff(Stealth) & {!target.state(disorient) || !target.player}", "target"},
-	
+
 }
 
 local inCombat = {

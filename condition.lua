@@ -4,6 +4,21 @@ local NeP = NeP
 -------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
+--/dump NeP.DSL.Parse("MainDaggerEquipped", "", "")
+NeP.DSL:Register("MainDaggerEquipped", function()
+   local _,_,_,_,_,_,MainItemType = GetItemInfo(GetInventoryItemLink("player",GetInventorySlotInfo("MainHandSlot")))
+    return MainItemType == "Daggers"
+end)
+
+--/dump NeP.DSL.Parse("SecondaryDaggerEquipped", "", "")
+NeP.DSL:Register("SecondaryDaggerEquipped", function()
+   local _,_,_,_,_,_,SecondaryItemType = GetItemInfo(GetInventoryItemLink("player",GetInventorySlotInfo("SecondaryHandSlot")))
+    return SecondaryItemType == "Daggers"
+end)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
 --outlaw pistol shoot condition
 --/dump NeP.DSL.Parse("pistol.condition", "", "")
 NeP.DSL:Register("pistol.condition", function()
