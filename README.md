@@ -8,4 +8,4 @@
 
 Rotation Status: [8.0.1]
 
-- [Rogue] - Assassination / OUTLAW - (no azerite equip included)
+- [Rogue] - Assassination / OUTLAW
